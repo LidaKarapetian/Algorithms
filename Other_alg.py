@@ -41,7 +41,7 @@ print("The least common multiple is ", lcm)
 
 
 # Python program to print the Fibonacci sequence's memeber
-
+#way_1
 n = int(input("Enter the number: "))
 n1 = 1
 n2 = 1
@@ -49,6 +49,20 @@ for i in range(2, n):
     n1, n2 = n2, n1 + n2
 
 print(n2)
+
+#way_2, using linear recursion/memorization
+
+fib = {}
+
+def fib_rec(n):
+    if n in fib:
+        return fib[n]
+    if n == 1 or n == 2:
+        v = 1
+    if n > 2:
+        v = fib_rec(n-1) + fib_rec(n-2)
+    
+    fib[n] = v
 
 #Python program to find the factorial of number
 
@@ -62,6 +76,7 @@ def fact(n):
     for i in range(1, n+1):
         f *= i
     return f
+    
 
 
 
