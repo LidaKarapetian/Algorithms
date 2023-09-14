@@ -76,7 +76,21 @@ def fact(n):
     for i in range(1, n+1):
         f *= i
     return f
-    
+
+# bracek balances
+
+def is_valid(mstr):
+    stack = []
+    ps = {"(":")"}
+    for p in mstr:
+        if p in ps:
+            stack.append(p)
+        elif len(stack) == 0 or ps[stack.pop()] != p:
+            return False
+    return True
+
+print(is_valid("()()()"))
+print(is_valid("()()))"))
 
 
 
